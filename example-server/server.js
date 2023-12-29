@@ -3,6 +3,7 @@
  */
 
 var Spacecraft = require('./spacecraft');
+var Boat = require('./boat'); 
 var RealtimeServer = require('./realtime-server');
 var HistoryServer = require('./history-server');
 var StaticServer = require('./static-server');
@@ -11,9 +12,9 @@ var expressWs = require('express-ws');
 var app = require('express')();
 expressWs(app);
 
-var spacecraft = new Spacecraft();
-var realtimeServer = new RealtimeServer(spacecraft);
-var historyServer = new HistoryServer(spacecraft);
+var boat = new Boat();
+var realtimeServer = new RealtimeServer(boat);
+var historyServer = new HistoryServer(boat);
 var staticServer = new StaticServer();
 
 app.use('/realtime', realtimeServer);

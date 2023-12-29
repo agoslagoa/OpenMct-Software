@@ -7,6 +7,8 @@
     <script src="dictionary-plugin.js"></script>
     <script src="historical-telemetry-plugin.js"></script>
     <script src="realtime-telemetry-plugin.js"></script>
+    <script src="ros2-Dictionary.js"></script>
+    <script src="ros2-realtime-telemtry.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             openmct.setAssetPath('node_modules/openmct/dist');
@@ -16,11 +18,11 @@
             openmct.time.clock('local', {start: -15 * 60 * 1000, end: 0});
             openmct.time.timeSystem('utc');
             openmct.install(openmct.plugins.Espresso());
-    
             openmct.install(DictionaryPlugin());
             openmct.install(HistoricalTelemetryPlugin());
             openmct.install(RealtimeTelemetryPlugin());
-    
+            openmct.install(Ros2Dictionary());
+            openmct.install(Ros2RealtimeTelemetry());
             openmct.start();
         });
     </script>

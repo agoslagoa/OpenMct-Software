@@ -1,0 +1,150 @@
+{
+    "name": "ros2-test",
+    "key": "ros2_test",
+    "measurements":[
+        {
+            "name": "linear-x-velocity",
+            "key": "linear.x.velocity",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "m/s",
+                    "format": "float",
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "linear-y-velocity",
+            "key": "linear.y.velocity",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "m/s",
+                    "format": "float",
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "linear-z-velocity",
+            "key": "linear.z.velocity",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "m/s",
+                    "format": "float",
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "angular-x-velocity",
+            "key": "angular.x.velocity",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "rad/s",
+                    "format": "float",
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "angular-y-velocity",
+            "key": "angular.y.velocity",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "rad/s",
+                    "format": "float",
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "angular-z-velocity",
+            "key": "angular.z.velocity",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "rad/s",
+                    "format": "float",
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -4,7 +4,7 @@
   "description": "Tutorials for Open MCT",
   "main": "example-server/server.js",
   "scripts": {
-    "start": "node example-server/server.js",
+    "start": "nodemon example-server/server.js",
     "clean": "rm -rf node_modules package-lock.json"
   },
   "repository": {
@@ -20,7 +20,8 @@
   "dependencies": {
     "express": "^4.16.4",
     "express-ws": "^4.0.0",
+    "nodemon": "^3.0.2",
     "openmct": "latest",
-    "ws": "^6.1.2"
+    "ws": "^6.2.2"
   }
 }

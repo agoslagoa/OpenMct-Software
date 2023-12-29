@@ -23,7 +23,7 @@ function RealtimeTelemetryPlugin() {
                 return function unsubscribe() {
                     delete listener[domainObject.identifier.key];
                     socket.send('unsubscribe ' + domainObject.identifier.key);
-                };
+                }
             }
         };
 
