@@ -21,8 +21,14 @@ function Boat () {
 
 Boat.prototype.updateState = function (message) {
         var timestamp = Date.now(), sent = 0;
+        console.log("message: " + typeof message);
+        try {
+            message = JSON.parse(message);
+        } catch (error) {
+            console.log("error: " + error);
+        }
         Object.keys(this.state).forEach(function (id) {
-            var state = { timestamp: timestamp, value:  JSON.parse(message)[id], id: id};
+            var state = { timestamp: timestamp, value:  message[id], id: id};
             this.notify(state);
             this.history[id].push(state);
             this.state["comms.sent"] += JSON.stringify(state).length;

@@ -3,8 +3,8 @@
     "key": "ros2_test",
     "measurements":[
         {
-            "name": "linear-x-velocity",
-            "key": "linear.x.velocity",
+            "name": "linear-x",
+            "key": "linear-x",
             "values": [
                 {
                     "key": "value",
@@ -27,8 +27,8 @@
             ]
         },
         {
-            "name": "linear-y-velocity",
-            "key": "linear.y.velocity",
+            "name": "linear-y",
+            "key": "linear-y",
             "values": [
                 {
                     "key": "value",
@@ -51,8 +51,8 @@
             ]
         },
         {
-            "name": "linear-z-velocity",
-            "key": "linear.z.velocity",
+            "name": "linear-z",
+            "key": "linear-z",
             "values": [
                 {
                     "key": "value",
@@ -69,14 +69,14 @@
                     "name": "Timestamp",
                     "format": "utc",
                     "hints": {
-                        "domain": 1
+                        "domain": 1 
                     }
                 }
             ]
         },
         {
-            "name": "angular-x-velocity",
-            "key": "angular.x.velocity",
+            "name": "angular-x",
+            "key": "angular-x",
             "values": [
                 {
                     "key": "value",
@@ -99,8 +99,8 @@
             ]
         },
         {
-            "name": "angular-y-velocity",
-            "key": "angular.y.velocity",
+            "name": "angular-y",
+            "key": "angular-y",
             "values": [
                 {
                     "key": "value",
@@ -123,8 +123,8 @@
             ]
         },
         {
-            "name": "angular-z-velocity",
-            "key": "angular.z.velocity",
+            "name": "angular-z",
+            "key": "angular-z",
             "values": [
                 {
                     "key": "value",
