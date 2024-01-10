@@ -1,4 +1,9 @@
-
+.l-shell__app-logo{
+    background-image: url(../assets/images/udesa-logo.png) !important;
+    background-size: cover !important;
+    height: 40px !important;
+    width: 80px !important;
+}
 .toast {
     background-color: red;
     position: absolute;
