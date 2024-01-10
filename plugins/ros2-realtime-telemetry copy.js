@@ -1,5 +1,5 @@
 
-  function Ros2RealtimeTelemetry (){
+  function Ros2RealtimeTelemetry (boatsystem){
     return function install(openmct) {
             var socket = new WebSocket(location.origin.replace(/^http/, 'ws') + '/realtime/');
             var listener = {};
@@ -12,21 +12,30 @@
         socket.onmessage = function (event) {
             var point = JSON.parse(event.data);
 
-            if (point.value < 0) { // Check if the value is negative   
+            if (point.value < 0) { // Check if the value is negative 
+                boatsystem.addAlert(point.id)
+                let audio = new Audio('/assets/alertSound.mp3');
                 var toast = document.createElement('div')
                 var icon = document.createElement('i');
                 icon.classList.add('fa-solid');
                 icon.classList.add('fa-exclamation-triangle');
                 toast.classList.add('toast');
-                toast.innerText = 'Negative value error! for ' + point.id +  ' with value ' + point.value.toFixed(4) + '';
-                toast.setAttribute('data-aos', 'zoom-in-down');
+                toast.innerText = boatsystem.getAlerts();
                 toastContainer.appendChild(toast);
                 toast.insertBefore(icon, toast.firstChild); // Insert the icon as the first child of the toast
-
+                boatsystem.playAlertSound();
+                setTimeout(function () {
+                    toast.classList.add('active');
+                }, 250);
                 // Hide the toast after some time (e.g., 3 seconds)
                 setTimeout(function () {
                     toast.remove();
-                }, 3000);
+                }, 1000);
+            }else if(boatsystem.checkAlert(point.id)){
+                boatsystem.removeAlert(point.id) // Remove the alert if the value is positive   
+                if (boatsystem.getAlertsAmount() == 0) {
+                    boatsystem.stopAlertSound();
+                }
             }
             if (listener[point.id]) {
                 listener[point.id](point);

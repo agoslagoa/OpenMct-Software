@@ -9,6 +9,7 @@
     <script src="plugins/ros2-Dictionary.js"></script>
     <script src="plugins/historical-telemetry-plugin.js"></script>
     <script src="plugins/ros2-realtime-telemetry copy.js"></script>
+    <script src="plugins/boatSystem.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -21,7 +22,7 @@
             openmct.install(openmct.plugins.Espresso());
             openmct.install(Ros2Dictionary());
             openmct.install(HistoricalTelemetryPlugin());
-            openmct.install(Ros2RealtimeTelemetry());
+            openmct.install(Ros2RealtimeTelemetry(new boatsystem));
             openmct.start();
         });
     </script>
