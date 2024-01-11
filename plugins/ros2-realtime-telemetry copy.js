@@ -11,10 +11,8 @@
 
         socket.onmessage = function (event) {
             var point = JSON.parse(event.data);
-
             if (point.value < 0) { // Check if the value is negative 
                 boatsystem.addAlert(point.id)
-                let audio = new Audio('/assets/alertSound.mp3');
                 var toast = document.createElement('div')
                 var icon = document.createElement('i');
                 icon.classList.add('fa-solid');
