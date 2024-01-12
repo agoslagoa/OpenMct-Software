@@ -28,6 +28,51 @@ class boatsystem {
             this.alerts.push(alert);
         }
     }
+    //CREATE ALERT
+    createAlert() {
+        // Create a notification container in the DOM
+        let toastContainer = this.createToastContainer();
+        document.body.appendChild(toastContainer);
+    
+        let toast = this.createToast();
+        toastContainer.appendChild(toast);
+        toast.insertBefore(this.createIcon(), toast.firstChild);
+        
+        this.playAlertSound();
+        
+        // Show the toast
+        setTimeout(function () {
+            toast.classList.add('active');
+        }, 250);
+        
+        // Hide the toast after some time (e.g., 3 seconds)
+        setTimeout(function () {
+            toast.remove();
+        }, 1000);
+    }
+    
+    // Method to create the toast container
+    createToastContainer() {
+        var toastContainer = document.createElement('div');
+        toastContainer.classList.add('toast-container');
+        return toastContainer;
+    }
+    
+    // Method to create the toast element
+    createToast() {
+        var toast = document.createElement('div');
+        toast.classList.add('toast');
+        toast.innerText = this.getAlerts();
+        return toast;
+    }
+    
+    // Method to create the alert icon
+    createIcon() {
+        var icon = document.createElement('i');
+        icon.classList.add('fa-solid');
+        icon.classList.add('fa-exclamation-triangle');
+        return icon;
+    }
     //CHECK IF ALERT ALREADY EXISISTS
     checkAlert(alert) {
         return this.alerts.includes(alert);
