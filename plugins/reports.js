@@ -27,7 +27,15 @@ function Reports() {
         .then(function (result) {
             result.data.measurements
             .forEach(element => {
-                console.log(element.key)
+                let url = '/history/' +
+                    element.key +
+                    '?start=' + startDate.getTime() +
+                    '&end=' + endDate.getTime() ;
+
+                http.get(url)
+                    .then(function (resp) {
+                        console.log(resp);
+                    });
             });
         });
         //get the dictionary json
