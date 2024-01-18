@@ -20,6 +20,11 @@ function Reports() {
     //oon click  i want to get the two dates the one ate the beggining of the day and the current date
 
     button.addEventListener('click', function() {
+        //disable the button
+        button.disabled = true;
+        button.classList.add('disabled');
+        text.innerText = 'Creating Report...';
+
         let startDate = new Date();
         startDate.setHours(0,0,0,0);
         let endDate = new Date();
@@ -46,9 +51,7 @@ function Reports() {
                 return Promise.all(promises);
             })
             .then(function () {
-                // All asynchronous requests have completed at this point
-    
-                // Now you can proceed with creating the table and downloading CSV
+
                 let csv = 'Boat Report,Date: ' + endDate + '\n';
                 csv += ',Maximun value, Minimun Value, Avarage Value, Error Time\n';
                 Object.keys(reportData).forEach(key => {
@@ -68,7 +71,32 @@ function Reports() {
 
                     csv += `${key},${max},${min},${avg},${errorTime}\n`;
                 });
-                downloadCSV(csv);
+                //create a toast to show the report was created
+                let toast = document.createElement('div');
+                toast.classList.add('toast');   
+                toast.classList.add('success');
+                
+                let icon = document.createElement('i');
+                icon.classList.add('fa-solid');
+                icon.classList.add('fa-file-arrow-down');
+                
+                let text = document.createElement('p');
+                text.innerText = 'Report Created';
+                
+                document.body.appendChild(toast);
+                toast.appendChild(icon);
+                toast.appendChild(text);
+                
+                setTimeout(  function () {
+                                    toast.classList.add('active');
+                                    //downloadCSV(csv);
+                },200);
+                setTimeout(function () {
+                    toast.remove();
+                    button.disabled = false;
+                    button.classList.remove('disabled');
+                    text.innerText = 'Create Report';
+                }, 3000);
             })
             .catch(function (error) {
                 console.error('Error:', error);

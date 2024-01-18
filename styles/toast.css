@@ -5,7 +5,6 @@
     width: 80px !important;
 }
 .toast {
-    background-color: red;
     position: absolute;
     top: 0;
     right: 45%;
@@ -20,6 +19,12 @@
     align-items: center;
     transition: all 0.5s ease-in-out;
     opacity: 0;
+}
+.toast.success{
+    background-color: green;
+}
+.toast.error{
+    background-color: red;
 }
 
 .toast i {

@@ -62,6 +62,7 @@ class boatsystem {
     createToast() {
         var toast = document.createElement('div');
         toast.classList.add('toast');
+        toast.classList.add('error');
         toast.innerText = this.getAlerts();
         return toast;
     }
