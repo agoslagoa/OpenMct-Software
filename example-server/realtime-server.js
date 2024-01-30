@@ -1,5 +1,5 @@
         var express = require('express');
-
+        const WebSocket = require('ws');
         function RealtimeServer(boat) {
 
             var router = express.Router();
@@ -24,6 +24,7 @@
 
                 // Listen for requests
                 ws.on('message', function (message) {
+                    console.log("message: " + message)
                     boat.updateState(message);
                     var parts = message.split(' '),
                         handler = handlers[parts[0]];
@@ -35,6 +36,26 @@
                 // Stop sending telemetry updates for this connection when closed
                 ws.on('close', unlisten);
             });
+
+            const clients = new Set();
+
+            router.ws('/coordenates', function (ws) {
+                // Add the new client to the set
+                clients.add(ws);
+    
+                ws.on('message', function (message) {
+                    clients.forEach(client => {
+                                     // Check if the client is still connected before sending
+                        if (client.readyState === WebSocket.OPEN) {
+                            client.send(message);
+                        }
+                })});
+                ws.on('close', function () {
+                            // Remove the client from the set when it's closed
+                            clients.delete(ws);
+                        });
+            });
+
             return router;
         };
 
