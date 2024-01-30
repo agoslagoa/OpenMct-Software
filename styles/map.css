@@ -1,0 +1,19 @@
+.map-container{
+    width: 16%;
+    height: 24%;
+    position: absolute;
+    top :74%;
+    left: 83.5%;
+    background-color: grey;
+    border-radius: 20%;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.map{
+    width: 97%;
+    height: 97%;
+    border-radius: 20%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
