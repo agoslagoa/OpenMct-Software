@@ -48,10 +48,19 @@
     cursor: pointer;
     border-radius: 8px;
     border: 2px solid black;
+    transition: all 0.1s ease-in-out;
 }
+.command-button.pressed{
+    background-color: orange;
+    color: #3f3f3f;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: 700;
 
+}
 
 .command-button:nth-child(1),
 .command-button:nth-child(5) {
   grid-column: span 3;
 }
+

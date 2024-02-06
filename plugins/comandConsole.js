@@ -1,4 +1,5 @@
 function ComandConsole(){
+    var socket = new WebSocket(location.origin.replace(/^http/, 'ws') + '/realtime/commands');
     const commands =['w','a','s','d','x']
     // now i need to hear  if they press a key that is in the commands or its uppercase variation
     const button = document.createElement('button');
@@ -26,6 +27,23 @@ function ComandConsole(){
     lShell.appendChild(consola);
 
     let open = false;
+
+    document.addEventListener('keydown', function(event) {
+        //console.log(event.key);
+        
+        // Verifica si la tecla está en el array de comandos
+        if (commands.includes(event.key.toLowerCase()) && open) {
+            //search for the buttom ny id  and add a class
+            let button = document.getElementById(event.key.toLowerCase());
+            button.classList.add('pressed');
+            // Elimina la clase después de 100ms
+            setTimeout(() => {
+                button.classList.remove('pressed');
+            }, 200);
+            // Envia un mensaje con la tecla presionada
+            socket.send(JSON.stringify({command: event.key}));
+        }
+    });
     button.addEventListener('click', function() {
         if (open) {
             open = false;
@@ -34,10 +52,6 @@ function ComandConsole(){
             consola.classList.remove('open-console');
             icon.classList.remove('fa-circle-xmark');
             icon.classList.add('fa-gamepad');
-            // Cierra la conexión WebSocket cuando la consola se cierra
-            if (socket && socket.readyState === WebSocket.OPEN) {
-                socket.close();
-            }
         } else {
             open = true;
             text.innerHTML = 'Close Console';
@@ -45,16 +59,8 @@ function ComandConsole(){
             icon.classList.add('fa-circle-xmark');
             button.classList.add('open-console-button');  
             consola.classList.add('open-console');
-            // Establece la conexión WebSocket cuando la consola se abre
-            socket = new WebSocket('ws://localhost:8080/realtime/commands');
-            socket.onopen = function(event) {
-                window.addEventListener('keypress', function(event) {
-                    // Verifica si la tecla está en el array de comandos
-                    if (commands.includes(event.key.toLowerCase())) {
-                        socket.send(event.key);
-                    }
-                });
-            };
+
+            
         }
     });
     
@@ -64,5 +70,15 @@ function ComandConsole(){
         button.classList.add('command-button');
         button.innerHTML = command;
         consola.appendChild(button);
+        //add an id
+        button.id = command;
+        button.addEventListener('click', function() {
+            button.classList.add('pressed');
+            // Elimina la clase después de 100ms
+            setTimeout(() => {
+                button.classList.remove('pressed');
+            }, 200);
+            socket.send(JSON.stringify({command: command}));
+        });
     });
 }

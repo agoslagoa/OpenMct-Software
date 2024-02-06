@@ -44,6 +44,7 @@
                 clients.add(ws);
     
                 ws.on('message', function (message) {
+                    console.log('Received message: ' + message);
                     clients.forEach(client => {
                                      // Check if the client is still connected before sending
                         if (client.readyState === WebSocket.OPEN) {
@@ -62,7 +63,7 @@
 
                 ws.on('message', function (message) {
                     console.log('Received command: ' + message);
-                    clients.forEach(client => {
+                    comandClients.forEach(client => {
                         if (client.readyState === WebSocket.OPEN) {
                             client.send(message);
                         }
