@@ -9,8 +9,49 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.open-console-button{
+    background-color: red;
 }
 
 .console-button i{
     font-size: 20px;
+}
+
+.console-container{
+    position :relative;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 8px;
+    margin-bottom: 20px
+
+
+}
+
+.open-console{
+    height: 18%;
+    opacity: 1;
+}
+.command-button{
+    background-color: grey;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 2px solid black;
+}
+
+
+.command-button:nth-child(1),
+.command-button:nth-child(5) {
+  grid-column: span 3;
 }

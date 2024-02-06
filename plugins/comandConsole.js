@@ -1,5 +1,5 @@
 function ComandConsole(){
-    const commands =['w','s','a','d','x']
+    const commands =['w','a','s','d','x']
     // now i need to hear  if they press a key that is in the commands or its uppercase variation
     const button = document.createElement('button');
     button.classList.add('console-button')
@@ -20,40 +20,49 @@ function ComandConsole(){
     button.appendChild(icon);
     button.appendChild(text);
     
+    const lShell = document.querySelector('.l-pane.l-pane--reacts.l-shell__pane-main');
+    const consola = document.createElement('div');
+    consola.classList.add('console-container');
+    lShell.appendChild(consola);
+
     let open = false;
     button.addEventListener('click', function() {
         if (open) {
             open = false;
             text.innerHTML = 'Open Console';
+            button.classList.remove('open-console-button');
+            consola.classList.remove('open-console');
+            icon.classList.remove('fa-circle-xmark');
+            icon.classList.add('fa-gamepad');
+            // Cierra la conexión WebSocket cuando la consola se cierra
+            if (socket && socket.readyState === WebSocket.OPEN) {
+                socket.close();
+            }
         } else {
             open = true;
             text.innerHTML = 'Close Console';
+            icon.classList.remove('fa-gamepad');
+            icon.classList.add('fa-circle-xmark');
+            button.classList.add('open-console-button');  
+            consola.classList.add('open-console');
+            // Establece la conexión WebSocket cuando la consola se abre
+            socket = new WebSocket('ws://localhost:8080/realtime/commands');
+            socket.onopen = function(event) {
+                window.addEventListener('keypress', function(event) {
+                    // Verifica si la tecla está en el array de comandos
+                    if (commands.includes(event.key.toLowerCase())) {
+                        socket.send(event.key);
+                    }
+                });
+            };
         }
     });
-
     
-    document.addEventListener('keydown', function(event){
-        if(commands.includes(event.key.toLowerCase())){
-            // i need to send this to a websocket server 
-            // i need to create a websocket connectio
-            const socket = new WebSocket('ws://localhost:3000');
-            // i need to send the key to the server
-            socket.send(event.key.toLowerCase());
-
-        }
-        
-    })
-
-    //i ned to a div to this l-pane l-pane--reacts l-shell__pane-main
-    const lShell = document.querySelector('.l-pane.l-pane--reacts.l-shell__pane-main');
-    const console = document.createElement('div');
-    console.classList.add('console-container');
-    lShell.appendChild(console);
     //for each element in the commands array i need to create a button
     commands.forEach(command => {
         let button = document.createElement('button');
         button.classList.add('command-button');
         button.innerHTML = command;
-        console.appendChild(button);
+        consola.appendChild(button);
     });
 }

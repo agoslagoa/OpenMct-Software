@@ -55,7 +55,20 @@
                             clients.delete(ws);
                         });
             });
+            const comandClients = new Set();
 
+            router.ws('/commands', function (ws) {
+                comandClients.add(ws);
+
+                ws.on('message', function (message) {
+                    console.log('Received command: ' + message);
+                    clients.forEach(client => {
+                        if (client.readyState === WebSocket.OPEN) {
+                            client.send(message);
+                        }
+                    })
+                });
+            });
             return router;
         };
 
