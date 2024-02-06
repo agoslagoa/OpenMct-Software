@@ -9,11 +9,11 @@ function Reports() {
     icon.classList.add('fa-solid');
     icon.classList.add('fa-table');
     
-    let text = document.createElement('span');
-    text.innerText = 'Create Report';
+    let button_text = document.createElement('span');
+    button_text .innerText = 'Create Report';
 
     button.appendChild(icon);
-    button.appendChild(text);
+    button.appendChild(button_text );
 
     headSection.appendChild(button);
 
@@ -23,7 +23,7 @@ function Reports() {
         //disable the button
         button.disabled = true;
         button.classList.add('disabled');
-        text.innerText = 'Creating Report...';
+        button_text.innerText = 'Creating Report...';
 
         let startDate = new Date();
         startDate.setHours(0,0,0,0);
@@ -89,13 +89,13 @@ function Reports() {
                 
                 setTimeout(  function () {
                                     toast.classList.add('active');
-                                    //downloadCSV(csv);
+                                    downloadCSV(csv);
                 },200);
                 setTimeout(function () {
                     toast.remove();
                     button.disabled = false;
                     button.classList.remove('disabled');
-                    text.innerText = 'Create Report';
+                    button_text.innerText = 'Create Report';
                 }, 3000);
             })
             .catch(function (error) {
