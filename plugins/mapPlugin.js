@@ -5,7 +5,9 @@ function MapPlugin() {
     let mapContainer = document.createElement('div');
     mapContainer.id = 'map-container';
     mapContainer.classList.add('map-container');
-    document.body.appendChild(mapContainer);
+
+    var contentDiv = document.querySelector('.c-inspector.js-inspector');
+    contentDiv.appendChild(mapContainer);
 
     var mapDiv = document.createElement('div');
     mapDiv.id = 'map';

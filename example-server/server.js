@@ -1,7 +1,7 @@
 /**
  * Basic implementation of a history and realtime server.
  */
-
+require('dotenv').config();
 var Spacecraft = require('./spacecraft');
 var Boat = require('./boat'); 
 var RealtimeServer = require('./realtime-server');
