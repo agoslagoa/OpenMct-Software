@@ -27,7 +27,7 @@
     <script src="plugins/licensePlugin.js"></script>
     <script src="plugins/mapPlugin.js"></script>
     <script src="plugins/comandConsole.js"></script>
-
+    <script src="plugins/cameraView.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             openmct.setAssetPath('node_modules/openmct/dist');
@@ -72,8 +72,10 @@
             LicensePlugin()
             MapPlugin() 
             ComandConsole()
+            cameraView()
         });
     </script>
+    <script src="./plugins/cameraView.js"></script>
 </head>
 <body>
 </body>

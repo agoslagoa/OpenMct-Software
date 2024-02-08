@@ -70,6 +70,19 @@
                     })
                 });
             });
+
+            const cameraClients = new Set();
+            router.ws('/camera1', function (ws) {
+                cameraClients.add(ws);
+                ws.on('message', function (message) {
+                    //console.log('Received image: ' + message);
+                    cameraClients.forEach(client => {
+                        if (client.readyState === WebSocket.OPEN) {
+                            client.send(message);
+                        }
+                    })
+                });
+            });
             return router;
         };
 

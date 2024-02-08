@@ -1,36 +1,16 @@
-/**
- * Basic implementation of a history and realtime server.
- */
-require('dotenv').config();
-var Spacecraft = require('./spacecraft');
-var Boat = require('./boat'); 
-var RealtimeServer = require('./realtime-server');
-var HistoryServer = require('./history-server');
-var StaticServer = require('./static-server');
-var rclnodejs = require('rclnodejs');
+const rclnodejs = require('rclnodejs');
 const PNG = require('pngjs').PNG;
+
 const WebSocket = require('ws');
-
-var expressWs = require('express-ws');
-var app = require('express')();
-expressWs(app);
-
-var boat = new Boat();
-var realtimeServer = new RealtimeServer(boat);
-var historyServer = new HistoryServer(boat);
-var staticServer = new StaticServer();
-
-app.use('/realtime', realtimeServer);
-app.use('/history', historyServer);
-app.use('/', staticServer);
-
-var socket = new WebSocket('ws://localhost:'+process.env.PORT+'/realtime/camera1');
+function camera(params) {
+    
+    var socket = new WebSocket('ws://localhost:'+process.env.PORT+'/realtime/camera1');
     rclnodejs.init().then(() => {
         const node = rclnodejs.createNode('image_node');
         const Image = 'sensor_msgs/msg/Image';
       
         let subscription = node.createSubscription(Image, '/pi_camera/image_raw', (msg) => {
-          //console.log('Received image:', msg);
+          console.log('Received image:', msg);
       
           // Create an image object from the raw data
           let rawImageData = {
@@ -69,10 +49,6 @@ var socket = new WebSocket('ws://localhost:'+process.env.PORT+'/realtime/camera1
       }).catch((err) => {
         console.error(err);
       });
-var port = process.env.PORT || 8080
+}
 
-app.listen(port, function () {
-    console.log('Open MCT hosted at http://localhost:' + port);
-    console.log('History hosted at http://localhost:' + port + '/history');
-    console.log('Realtime hosted at ws://localhost:' + port + '/realtime');
-});
+module.exports = {camera}
