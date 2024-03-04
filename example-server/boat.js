@@ -1,3 +1,4 @@
+const uploadTelemetry = require('./CouchDB');
 function Boat () {
     
         this.state= {
@@ -29,6 +30,7 @@ Boat.prototype.updateState = function (message) {
         }
         Object.keys(this.state).forEach(function (id) {
             var state = { timestamp: timestamp, value:  message[id], id: id};
+            uploadTelemetry(id, message[id])
             this.notify(state);
             this.history[id].push(state);
             this.state["comms.sent"] += JSON.stringify(state).length;
