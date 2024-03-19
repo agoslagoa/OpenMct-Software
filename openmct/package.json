@@ -1,0 +1,25 @@
+{
+  "name": "openmct",
+  "version": "1.0.0",
+  "description": "'",
+  "main": "example-server/server.js",
+  "scripts": {
+    "start": "nodemon example-server/server.js",
+    "clean": "rm -rf node_modules package-lock.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "animejs": "^3.2.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.3",
+    "express-ws": "^5.0.2",
+    "native-toast": "^2.0.0",
+    "nodemon": "^3.1.0",
+    "openmct": "^3.2.1",
+    "pngjs": "^7.0.0",
+    "rclnodejs": "^0.26.1",
+    "react-toastify": "^10.0.5",
+    "ws": "^8.16.0"
+  }
+}

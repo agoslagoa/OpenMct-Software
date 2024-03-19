@@ -1,0 +1,150 @@
+{
+    "name": "ros2-test",
+    "key": "ros2_test",
+    "measurements":[
+        {
+            "name": "linear-x",
+            "key": "linear-x",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "m/s",
+                    "format": "float",
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "linear-y",
+            "key": "linear-y",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "m/s",
+                    "format": "float",
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "linear-z",
+            "key": "linear-z",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "m/s",
+                    "format": "float",
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1 
+                    }
+                }
+            ]
+        },
+        {
+            "name": "angular-x",
+            "key": "angular-x",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "rad/s",
+                    "format": "float",
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "angular-y",
+            "key": "angular-y",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "rad/s",
+                    "format": "float",
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "angular-z",
+            "key": "angular-z",
+            "values": [
+                {
+                    "key": "value",
+                    "name": "Value",
+                    "units": "rad/s",
+                    "format": "float",
+                    "hints": {
+                        "range": 1
+                    }
+                },
+                {
+                    "key": "utc",
+                    "source": "timestamp",
+                    "name": "Timestamp",
+                    "format": "utc",
+                    "hints": {
+                        "domain": 1
+                    }
+                }
+            ]
+        }
+    ]
+}
