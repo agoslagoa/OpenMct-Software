@@ -41,7 +41,6 @@ Boat.prototype.notify = function (state) {
         l(state);
     });
 }
-
 Boat.prototype.listen = function (listener) {
     this.listeners.push(listener);
     return function () {
