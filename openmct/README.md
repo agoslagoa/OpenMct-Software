@@ -2,7 +2,7 @@
 
 ## Introduccion
 
-En búsqueda de avances punteros en tecnología marítima, la Universidad de San Andrés presenta con orgullo su Software de Control Autónomo de Embarcaciones. Desarrollado por un equipo de investigadores y ingenieros dedicados, este software representa un gran avance en el ámbito de la navegación marítima autónoma.
+En búsqueda de avances punteros en tecnología marítima, la Universidad de San Andrés presenta con orgullo su Software de Control Autónomo de Embarcaciones. Desarrollado por un equipo de investigadores e ingenieros dedicados, este software representa un gran avance en el ámbito de la navegación marítima autónoma.
 
 ### Funcionamiento
 
