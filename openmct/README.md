@@ -14,13 +14,13 @@ A la hora de desarrrollar hay algunas cosas que se deben en  tener en cuenta de 
 
 #### Distribucion de carpetas
 
-[/example-server]([openmct/example-server](https://github.com/BrunoDC-dev/OpenMct-Software/blob/f48aa8e0e69e603baef0ddbe5b6d1a4b6d17622c/openmct/example-server)): En esta carpeta es donde se va todo lo relacionado con el server side, ya sea websocket puerto,etc
+[/example-server](./openmct/example-server): En esta carpeta es donde se va todo lo relacionado con el server side, ya sea websocket puerto,etc
 
-[/assets]([openmct/assets](https://github.com/BrunoDC-dev/OpenMct-Software/blob/d2c2a1f1ecc7f1c6bfd29db2bedeb63862d85858/openmct/assets)):  En Assets se huardo todo lo cosmetico para la pagina ya sean sonidos imagesnes gif o cualquier otro archivo adicional que no tenga otra fucnion que ser decorativo
+[/assets](./openmct/assets):  En Assets se huardo todo lo cosmetico para la pagina ya sean sonidos imagesnes gif o cualquier otro archivo adicional que no tenga otra fucnion que ser decorativo
 
-[/plugins](https://github.com/BrunoDC-dev/OpenMct-Software/blob/4c1eb62675c089ad1c0baae3782f645b95f7deeb/openmct/plugins):  Todos los plugins que se desarrollen de forma externa deben ser guardados en esta carpeta, cada plugin debe tenr una funcion principal que va a ser util para importarlo
+[/plugins](./openmct/plugins):  Todos los plugins que se desarrollen de forma externa deben ser guardados en esta carpeta, cada plugin debe tenr una funcion principal que va a ser util para importarlo
 
-[/styles](https://github.com/BrunoDC-dev/OpenMct-Software/blob/4c1eb62675c089ad1c0baae3782f645b95f7deeb/openmct/styles): Dentro de esta de carpeta se deben guardar todas las clases de den estilos al la visual
+[/styles](./openmct/styles): Dentro de esta de carpeta se deben guardar todas las clases de den estilos al la visual
 
 #### Levantar el Projecto
 

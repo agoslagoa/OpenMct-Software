@@ -2,7 +2,7 @@
 
 ## Levantar el proyecto de forma local
 
-Para correr el proyecto de forma local se debe tener instalado [Node Js](https://nodejs.org/en) y [Ros 2 Humble](https://docs.ros.org/en/humble). Para correr el proyecto leer el [README]([openmct/README.md](https://github.com/BrunoDC-dev/OpenMct-Software/blob/d2c2a1f1ecc7f1c6bfd29db2bedeb63862d85858/openmct/README.md)) en \openmct.
+Para correr el proyecto de forma local se debe tener instalado [Node Js](https://nodejs.org/en) y [Ros 2 Humble](https://docs.ros.org/en/humble). Para correr el proyecto leer el [README](./openmct/README.md) en \openmct.
 
 ## Levantar el proyecto desde un contenedor de Docker (WIP)
 
