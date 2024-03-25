@@ -14,13 +14,13 @@ A la hora de desarrrollar hay algunas cosas que se deben en  tener en cuenta de 
 
 #### Distribucion de carpetas
 
-[/example-server](./openmct/example-server): En esta carpeta es donde se va todo lo relacionado con el server side, ya sea websocket puerto,etc
+[/example-server](./example-server): En esta carpeta es donde se va todo lo relacionado con el server side, ya sea websocket puerto,etc
 
-[/assets](./openmct/assets):  En Assets se huardo todo lo cosmetico para la pagina ya sean sonidos imagesnes gif o cualquier otro archivo adicional que no tenga otra fucnion que ser decorativo
+[/assets](./assets):  En Assets se huardo todo lo cosmetico para la pagina ya sean sonidos imagesnes gif o cualquier otro archivo adicional que no tenga otra fucnion que ser decorativo
 
-[/plugins](./openmct/plugins):  Todos los plugins que se desarrollen de forma externa deben ser guardados en esta carpeta, cada plugin debe tenr una funcion principal que va a ser util para importarlo
+[/plugins](./plugins):  Todos los plugins que se desarrollen de forma externa deben ser guardados en esta carpeta, cada plugin debe tenr una funcion principal que va a ser util para importarlo
 
-[/styles](./openmct/styles): Dentro de esta de carpeta se deben guardar todas las clases de den estilos al la visual
+[/styles](./styles): Dentro de esta de carpeta se deben guardar todas las clases de den estilos al la visual
 
 #### Levantar el Projecto
 
