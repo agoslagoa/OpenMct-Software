@@ -30,6 +30,10 @@ setup(
             "coordenates_subscriber = my_robot_controller.coordenates_subscriber:main",
             "comand_control = my_robot_controller.comand_control:main",
             "img_test = my_robot_controller.img_test:main",
+            "v1_out_subcriber = my_robot_controller.v1_out_subcriber:main",
+            "i2_out_subscriber = my_robot_controller.i2_out_subscriber:main",
+            "publisher = my_robot_controller.publisher:main",
+            "subscriber = my_robot_controller.subscriber:main",
         ],
     },
 )

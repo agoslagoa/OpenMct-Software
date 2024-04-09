@@ -3,13 +3,13 @@
     "key": "ros2_test",
     "measurements":[
         {
-            "name": "linear-x",
-            "key": "linear-x",
+            "name": "V1_out",
+            "key": "V1_out",
             "values": [
                 {
                     "key": "value",
                     "name": "Value",
-                    "units": "m/s",
+                    "units": "V",
                     "format": "float",
                     "hints": {
                         "range": 1
@@ -27,13 +27,13 @@
             ]
         },
         {
-            "name": "linear-y",
-            "key": "linear-y",
+            "name": "I2_out",
+            "key": "I2_out",
             "values": [
                 {
                     "key": "value",
                     "name": "Value",
-                    "units": "m/s",
+                    "units": "Amp",
                     "format": "float",
                     "hints": {
                         "range": 1
@@ -51,13 +51,13 @@
             ]
         },
         {
-            "name": "linear-z",
-            "key": "linear-z",
+            "name": "H_out",
+            "key": "H_out",
             "values": [
                 {
                     "key": "value",
                     "name": "Value",
-                    "units": "m/s",
+                    "units": "%RH",
                     "format": "float",
                     "hints": {
                         "range": 1
@@ -75,13 +75,13 @@
             ]
         },
         {
-            "name": "angular-x",
-            "key": "angular-x",
+            "name": "T_out",
+            "key": "T_out",
             "values": [
                 {
                     "key": "value",
                     "name": "Value",
-                    "units": "rad/s",
+                    "units": "C",
                     "format": "float",
                     "hints": {
                         "range": 1
@@ -99,13 +99,13 @@
             ]
         },
         {
-            "name": "angular-y",
-            "key": "angular-y",
+            "name": "V2_out",
+            "key": "V2_out",
             "values": [
                 {
                     "key": "value",
                     "name": "Value",
-                    "units": "rad/s",
+                    "units": "V",
                     "format": "float",
                     "hints": {
                         "range": 1
@@ -123,13 +123,13 @@
             ]
         },
         {
-            "name": "angular-z",
-            "key": "angular-z",
+            "name": "I1_out",
+            "key": "I1_out",
             "values": [
                 {
                     "key": "value",
                     "name": "Value",
-                    "units": "rad/s",
+                    "units": "Amp",
                     "format": "float",
                     "hints": {
                         "range": 1
