@@ -2,12 +2,12 @@ const uploadTelemetry = require('./CouchDB');
 function Boat () {
     
         this.state= {
-            "linear-x":0,
-            "linear-y":0,
-            "linear-z":0,
-            "angular-x":0,
-            "angular-y":0,
-            "angular-z":0,
+            "V1_out":0,
+            "V2_out":0,
+            "I1_out":0,
+            "I2_out":0,
+            "H_out":0,
+            "T_out":0,
             "comms.sent":0
         };
         this.history = {}
@@ -30,6 +30,7 @@ Boat.prototype.updateState = function (message) {
         }
         Object.keys(this.state).forEach(function (id) {
             var state = { timestamp: timestamp, value:  message[id], id: id};
+            console.log(state)
             uploadTelemetry(id, message[id])
             this.notify(state);
             this.history[id].push(state);

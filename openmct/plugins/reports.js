@@ -32,7 +32,7 @@ function Reports() {
 
         let promises = [];
 
-        http.get('/ros2dictionary.json')
+        http.get('/nautilusDicitionary.json')
             .then(function (result) {
                 result.data.measurements.forEach(element => {
                     let url = '/history/' +

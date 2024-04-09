@@ -1,5 +1,5 @@
 function getDictionary() {
-    return http.get('/ros2dictionary.json')
+    return http.get('/nautilusDicitionary.json')
         .then(function (result) {
             //console.log(result.data)
             return result.data;
