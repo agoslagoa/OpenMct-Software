@@ -1,19 +1,21 @@
 # Software de Control Autónomo de Embarcaciones de la Universidad de San Andrés
 
-## Levantar el projecto 
- para iniciar el projecto se recomibenda levantarlo de forma local utlizando Node Js Y Ros 2 Humble. Como sistema opertaivo se enfatiza el uso de Linux Ubuntu ya que facilitara su uso o desarrollo 
+## Levantar el proyecto 
+ Para iniciar el proyecto se recomienda levantarlo de forma local utlizando Node Js, Ros 2 Humble y micro-ROS. Como sistema operativo se enfatiza el uso de Linux Ubuntu ya que facilitará su uso y/o desarrollo.
 
  Node Js: https://nodejs.org/en
  
  Ros 2: https://docs.ros.org/en/humble
 
- Apesar de esto se esta de desarrollando una alternativa con Docker 
-    Debe Ejecutar los sigueintes comandos:
+ Micro-ROS: https://micro.ros.org/
+
+ Alternativamente se está considera una opción con Docker:
+    Debe Ejecutar los siguientes comandos:
  ``` 
     docker build -t Nautilus .
 ```
 
-Cuando Finalize debe ejecutar:
+Cuando finalice debe ejecutar:
 
 ```
     docker run -p 8080:8080 Nautilus
