@@ -7,6 +7,10 @@
  
  Ros 2: https://docs.ros.org/en/humble
 
+ Micro-ROS: https://micro.ros.org/
+
+ Se deben tener unos requisitos previos para poder levantar el proyecto correctamente. Entre esos, se solicita tener instalado Docker.
+
  Apesar de esto se esta de desarrollando una alternativa con Docker 
     Debe Ejecutar los sigueintes comandos:
  ``` 
